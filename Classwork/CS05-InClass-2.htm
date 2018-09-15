@@ -5,9 +5,7 @@
 
     <title>CS3-InClass</title>
     <style type="text/css">
-        body{
-            background-color:
-        }
+        
         h1{
             font-family:lucida;
             color:navy;
@@ -37,16 +35,45 @@
         }
         img{
             float:left;
-            border:4px solid red
+            border:4px solid red;
+            border-style:solid;
+            padding-top:10px;
+            padding-bottom:10px;
+            padding-right:10px;
+            padding-left:10px;
+            margin-top:30px;
+            margin-bottom:30px;
+            margin-right:30px;
+            margin-left:30px;
+        }
+        #A{
+            border:3px dotted red;
+        }
+        #B{
+            color:green;
+        }
+        #C{
+            color:blue;
+            font-style:italic;
+            text-decoration:underline;
+        }
+        div#yellow{
+            background-color:yellow;
+        }
+        div#green{
+            background-color:green;
+        }
+        div#lime{
+            background-color:lime;
+        }
+        span#CC{
+            font-size:1.5em
         }
 
-    
     
     </style>
     
 
-    
-        
 
 </head>
 
@@ -54,17 +81,19 @@
 
     <h1> This line demonstrates H1 </h1>
     <h2> This line demonstrates H2 </h2>
-    <h3> This line shows how H3 will be different from H1 and H2 </h3>
+    <h3 class="C"> This line shows how H3 will be different from H1 and H2 </h3>
 
     <hr>
 
-    <h1>Quote One from Winston Churchill </h1>
-    <p>
+    <div id="yellow">
+    <h1>Quote One from <span id="CC">W</span>inston <span id="CC">C</span>hurchill </h1>
+    <p class="C">
         Criticism may not be agreeable, but it is necessary. It fulfils the same function as pain in the human body. It calls attention
         to an unhealthy state of things.
     </p>
-    <div>
-        <h3>Quote Two from Winston Churchill </h3>
+</div>
+    <div id="green">
+        <h3 class="C">Quote Two from <span id="CC">W</span>inston <span id="CC">C</span>hurchill </h3>
 
         <p>
             Courage is rightly esteemed the first of human qualities... because it is the quality which guarantees all others. Courage
@@ -72,13 +101,15 @@
         </p>
 
 
+    <div id="lime">
         <h2> Quote Three from Winston Churchill</h2>
         <h3> This paragraph will have a border</h3>
-        <p>
+        <p id="A">
             Continuous effort - not strength or intelligence - is the key to unlocking our potential.
         </p>
+        </div>
         <hr>
-        <p>
+        <p class="C">
             The tiger (Panthera tigris) is the largest cat species, reaching a total body length of up to 3.3 metres (11 ft) and weighing
             up to 306 kg (670 lb). It is the third largest land carnivore (behind only the Polar bear and the Brown bear).
             Its most recognizable feature is a pattern of dark vertical stripes on reddish-orange fur with lighter underparts.
