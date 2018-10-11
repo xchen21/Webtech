@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>Web Technologies - Xinyi Chen </title>
+       
+        <head>
+                
+                    <style>
+                                    body { background:black; color:black;font-family:"arial"; font-size:16px; margin: auto;}
+                                h1, h2, h3, h4, h5, h6 { margin: auto; }
+                
+                                .clearFlex:after {display: block; content: ''; clear: both;}
+                                
+                                .left {float: left;}
+                                .right {float: right;}
+                                
+                                .container {width: 990px; margin: auto; padding: 0 15px; box-sizing: border-box; background-color: transparent; }
+                                .contView {padding-top: 50px;}
+                                .contView h1 {font-size: 30px; color:white; text-align: center; font-weight: 600;}
+                                .table {margin-top: 30px; width: 100%; background-color:silver; border: 1px; display: table; vertical-align: middle; text-align: center; margin-bottom: 50px;}
+                                .table>thead>tr>th {text-align: center; font-size: 16px; border: 1px solid #000; margin: 1px; height: 50px; display: table-cell; vertical-align: middle; padding: 0 12px;}
+                                .table>tbody>tr>td {text-align: center; font-size: 16px; border: 1px solid #000; margin: 1px; vertical-align: middle; padding: 8px 12px;}
+                                .table>tbody>tr>td img {max-width: 100%;}
+                                .selectView {width: 90%; margin: auto;}
+                                .groupView {text-align: left;}
+                                .selectView h3 {font-size: 16px; font-weight: normal; text-align: left;}
+                                .selectView select {width: 100%; height: 30px;}
+                                .table>tbody>tr.titleTr>td {background-color: #fff;}
+                                .table>tbody>tr.lowTr>td {padding: 0;}
+                                .canderView {text-align: left;}
+                                .canderView select {width: 80px; height: 30px; margin-left: 10px;}
+                                .writerView1 {text-align: left;}
+                                .writerView1 input {height: 30px; width: 70px; padding: 0 10px; background-color: yellow; margin-left: 10px; font-size: 14px;}
+                                .describeView {text-align: left;}
+                                .describeView textarea {height: 120px; background-color: yellow; width: 100%; box-sizing: border-box;}
+                                .buttonView button {height: 30px;}
+                                .buttonView .oopsBtn {margin-left: 10px;}
+                                .buttonView .oopsBtn:hover {background-color: red; border-color: red; }
+                                
+                                .lowView {background: #017f01 left repeat-x; overflow: hidden; height: 120px;}
+                                .lowView img {display: block; float: left;}
+
+                                @media screen and (max-width:990px){
+                                        .mian {width: 990px;}
+                                        .container {width: 960px;}
+                                
+                                }
+        
+                
+                    </style>
+                
+                </head>
+                <body >
+                
+                <div class="mian">
+                    <div class="container">
+                        <div class="contView">
+                            <h1>Soap Survey</h1>
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th style="width: 25%;">Soap image</th>
+                                    <th style="width: 25%;">Soap Color Preference</th>
+                                    <th style="width: 20%;">Soap Purchase Intent</th>
+                                    <th style="width: 30%;">Soap Features Liked</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><img src="images/soap-1.jpg" alt=""></td>
+                                    <td>
+                                        <div class="groupView">
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox1" value="option1">Green
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox2" value="option2">Gold(shown)
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox3" value="option1">Red
+                                                </label>
+                                            </div>
+                                        </div>
+                
+                                    </td>
+                                    <td>
+                                        <div class="selectView">
+                                            <h3>At $5.00/unit</h3>
+                                            <select class="form-control">
+                                                <option>Definetely buy</option>
+                                                <option>Likely buy</option>
+                                                <option>Undecided</option>
+                                                <option>Unlikely buy</option>
+                                                <option>Not buy</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="groupView">
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox4" value="option1">Soap
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox5" value="option2">Size
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox6" value="option1">Smell
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox7" value="option1">Texture
+                                                </label>
+                                            </div>
+                                        </div>
+                
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/soap-2.jpg" alt=""></td>
+                                    <td>
+                                        <div class="groupView">
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox17" value="option1">lvory
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox18" value="option2">Sandal Wood (shown)
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox19" value="option1">Pink
+                                                </label>
+                                            </div>
+                                        </div>
+                
+                                    </td>
+                                    <td>
+                                        <div class="selectView">
+                                            <h3>At $8.00/unit</h3>
+                                            <select class="form-control">
+                                                <option>Definetely buy</option>
+                                                <option>Likely buy</option>
+                                                <option>Undecided</option>
+                                                <option>Unlikely buy</option>
+                                                <option>Not buy</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="groupView">
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox11" value="option1">Shape
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox12" value="option2">Size
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox13" value="option1">Smell
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="inlineCheckbox14" value="option1">Texture
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="titleTr">
+                                    <td colspan="4">
+                                        <div class="titleView">Tell us about yourself</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="canderView">
+                                            <span class="name">gender</span>
+                                            <select class="form-control">
+                                                <option>Male</option>
+                                                <option>female</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td colspan="3">
+                                        <div class="writerView1">
+                                            <span>Age:  (under 25 enter 1,25-40 enter 2,else erter)</span>
+                                            <input type="text">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="lowTr">
+                                    <td colspan="2">
+                                        <div class="describeView">
+                                            <div class="title1">Your comments are welcome</div>
+                                            <textarea class="textView"></textarea>
+                                        </div>
+                
+                                    </td>
+                                    <td colspan="2">
+                                        <div class="buttonView">
+                                            <button>Done</button>
+                                            <button class="oopsBtn">Opops</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="clearFlex lowView">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                        <img src="images/beaver.jpg">
+                    </div>
+                </div>
+                
+                
+                </body>
+                
+                
+                
+                
+                </html>
+                
+</body>
+
+</html>
