@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>CS13-InClass</title>
+        <script type="text/javascript">
+            function ask() {
+                //let message= prompt("what day is it today?");
+                //document.getElementById("userInput").innerHTML= message;
+
+               // let name = prompt ("What is your name?");
+
+                //if ( (message == "Tuesday") && (name=="Xinyi")){
+                    //document.getElementById("result").innerHTML = "Correct!";
+               // }
+                //alert("How are you today");
+               let x=prompt ("What is your gender?");
+               
+               document.getElementById("userInput").innerHTML = x;
+
+                if (x.toLowerCase=="male"){
+                    document.getElementById("result".innerHTML= "Hello, sir! How old are you?");
+
+                    document.getElementById("image").src="images/"
+                    
+                }
+                else if((x.toLowerCase() =="Female" || x.toLowerCase == "woman"))
+                {
+                    document.getElementById("result").innerHTML= "Hello, madam!";
+                    document.getElementbyId("image1").src="images/tiger1/jpg";
+                
+                    //alert("Hello, madam!");
+
+                    //alert("You look reall young!")
+                }
+                else {
+                    document.getElementById("result").innerHTML= "Hello, robot!"
+                }
+            }
+        
+        
+        </script>
+
+
+       
+    </head>
+
+    <body>
+        <h1>Conditional Statements Demo</h1>
+
+        <button onclick="ask()">Click Me</button>
+
+        <p>
+            Input: <span id="userInput"></span>
+        </p>
+        <p>
+            Result: <span id="result"></span>
+            <br><img id="image1" src="">
+        </p>
+
+
+
+
+    </body>
+
+</html>
