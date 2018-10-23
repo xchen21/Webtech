@@ -43,7 +43,30 @@
                 background-color: red;
             }
         </style>
+        <script type="text/javascript">
+        
+        function change(circle){
+            if(circle=="green-circle"){
+                document.getElementById("header2").innerHTML="You just clicked the green circle";
+                document.getElementById("green-circle").style.backgroudColor="DarkGreen";
+                document.getElementById("blue-circle").style.backgroundColor="Lightblue";
+                document.getElementById("red-circle").style.backgroundColor="Black";
 
+            }
+            else if(circle=="blue-circle"){
+                document.getElementById("header2").innerHTML="You just clicked the blue circle";
+                document.getElementById("green-circle").sytle.backgroundColor="DarkGreen";
+            }
+            
+            
+        
+        
+
+            
+
+            
+        
+        </script>
         
     </head>
 
@@ -63,11 +86,12 @@
         <h2 id="header2">Play with circles</h2>
         <div class="main">
 
-            <div class="circle" id="green-circle" onclick="change(this.id)"></div>
+            <div class="circle" id="green-circle" onclick="green()"></div>
 
             <div class="circle" id="blue-circle" onclick="change(this.id)"></div>
 
             <div class="circle" id="red-circle" onclick="change(this.id)"></div>
+            
 
         </div>
 
