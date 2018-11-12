@@ -2,48 +2,150 @@
 <html>
 
 <head>
-        <meta charset="UTF-8">
-        <title>Trip In Beijing </title>
-        <link rel="stylesheet" href="style.css">
-       
+    <meta charset="UTF-8">
+    <title>Trip In Beijing </title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            background: #e9e7ef;
+        }
+
+        .container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 100px auto 0 auto;
+            box-shadow: 0 0 5px green;
+            overflow: hidden;
+        }
+
+        .wrap {
+            position: absolute;
+            width: 2400px;
+            height: 400px;
+            z-index: 1;
+        }
+
+        .container .wrap img {
+            float: left;
+            width: 600px;
+            height: 400px;
+        }
+
+        .container .buttons span {
+            margin-left: 5px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: green;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .container .buttons span.on {
+            background-color: red;
+        }
+
+        .container .arrow {
+            position: absolute;
+            top: 35%;
+            color: green;
+            padding: 0px 14px;
+            border-radius: 50%;
+            font-size: 50px;
+            z-index: 2;
+            display: none;
+        }
+
+        .container .arrow_left {
+            left: 10px;
+        }
+
+        .container .arrow_right {
+            right: 10px;
+        }
+
+        .container:hover .arrow {
+            display: block;
+        }
+
+        .container .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
 </head>
 
+
 <body>
-        
-        <a href="1beijingculture.htm">Culture</a>
-        <a href="2beijingtouristattraction.htm">Attractions</a>
-        <a href="3beijingfood.htm">Food</a>
-        <a href="4beijingcurrentevents.htm">Discover</a>
-        <a href="5contactform.htm">Contact Us</a>
-                      
-        
-        <li style="background:url(images/banner1.jpg) no-repeat top center;"><a href="#"></a></li>
-        <li style="background:url(images/banner2.jpg) no-repeat top center;"><a href="#"></a></li>
-        <li style="background:url(images/banner3.jpg) no-repeat top center;"><a href="#"></a></li>
-        <p>Bejing is the capital of China, a world famous historical city and cultural city. It is the political, economic, transportation, and cultural center of the country. It is a fusion of China's splendid culture and art, leaving many places of interest and cutural landscapes. In recent years, Beijing has also become one of the top destination for tourism. Not only can you experience full of history from the city, you can also enjoy vibrant activities and delicious food.</p>
-        <h1>Beijing Overview</h1>
-        <img src="image/forbiddencity.jpeg" alt="forbiddencity">
-        <h2>The Forbidden City</h2>
-        <p>Located in the center of Beijing, it is the most royal example of Beijing, the most famous museum in China. Formely known as the imperial palace of the Ming and Qing Dynasties, it is now the palace musuem, which houses millions of cultural relics and conducts regular or temporary exhibition in the Forbidden City.</p>
-        <h2>Beijing Roast Duck</h2>
-        <p>It is one of the most famous dishes from Beijing. It has two different cooking style: "hanging stove" and "steaming furnace". The most famous restaurants for roast duck are Quanjude(全聚德) and Sijiminfu(四季民福). The prices of roast duck range from 60 yuan to two or three hundreds yuan.</p>
-        <h2>Beijing Alley(Hutong)</h2>
-        <p>Beijing inherits the architectural form of the Yuan Dynasty, and the number has decreased drastically due to urban construction. Some famous Hutong in Beijing are "Nanluoguxiang(南锣鼓巷), Guozijian(国子监), Wudaoying(五道营). These are cultural blocks that have already been commercialized. If you want to experience the local Hutong, there are also ones that local people live in, which can be visted by bike or on foot.</p>
-        <h1>Travel Reminders</h1>
-        <h2>Traffic Jam</h2>
-        <p>The traffic congestion in beijing is often beyond your imagination. Choosing a good time and transportation is the only way to avoid congestion. The Subway is the best choice to guarantee travel time. The public transportations in Beijing is very well developed. You can get to almost everywhere by Subway. However, in the peak hour, the Subway can get very crowded. In recent years, the development of shared bikes bring the people another way of traveling. You can see shared bikes everywhere and all you need to do is download an App and you can start riding the bicycle! It is also a way to save time and be environmentally friendly</p>
-        <h2>Weather</h2>
-        <p>Due to heavy development of the city, Beijing is inevitably suffering from air pollution. For sensitive people traveling in the days when PM2.5 is high, buying masks in convenience store can be a good choice. Summer is the rainy season of Beijing, bringing an umbrella might be neccessary.</p>
-        <h1>Recommended Days of Travel</h1>
-        <p>3-5 days.</p>
-        <p>Beijing's famous attractions are relatively concentrated. Therefore, 3 days are enough for visiting the famous attractions. However, if you want to experience the scenary of the surrounding suburbs, you can increase your travel day by one per place you go because Beijing is very big.</p>
 
-        <audio controls>
-                <source src="media/music.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-        </audio>
+<header id="header">
+    <ul>
+        <li class="active"><a href="1beijingculture.htm">Culture</a></li>
+        <li><a href="2beijingtouristattraction.htm">Attractions</a></li>
+        <li><a href="3beijingfood.htm">Food</a></li>
+        <li><a href="4beijingcurrentevents.htm">Discover</a></li>
+        <li><a href="5contactform.htm">Contact Us</a></li>
+    </ul>
+</header>
+<div class="content">
+    <div class="container">
+        <div class="wrap" style="left:-600px;">
+            <img src="image/banner1.jpg">
+            <img src="image/banner2.jpg">
+            <img src="image/banner3.jpg">
+        </div>
 
-        <hr>
+        <a style="text-decoration: none" href="javascript:;" class="arrow arrow_left">&lt;</a>
+        <a style="text-decoration: none" href="javascript:;" class="arrow arrow_right">&gt;</a>
+    </div>
+
+    <p>Bejing is the capital of China, a world famous historical city and cultural city. It is the political, economic, transportation, and cultural center of the country. It is a fusion of China's
+        splendid culture and art, leaving many places of interest and cutural landscapes. In recent years, Beijing has also become one of the top destination for tourism. Not only can you experience
+        full
+        of history from the city, you can also enjoy vibrant activities and delicious food.</p>
+    <h1>Beijing Overview</h1>
+    <img src="image/forbiddencity.jpeg" alt="forbiddencity">
+    <h2>The Forbidden City</h2>
+    <p>Located in the center of Beijing, it is the most royal example of Beijing, the most famous museum in China. Formely known as the imperial palace of the Ming and Qing Dynasties, it is now the
+        palace
+        musuem, which houses millions of cultural relics and conducts regular or temporary exhibition in the Forbidden City.</p>
+    <h2>Beijing Roast Duck</h2>
+    <p>It is one of the most famous dishes from Beijing. It has two different cooking style: "hanging stove" and "steaming furnace". The most famous restaurants for roast duck are Quanjude(全聚德) and
+        Sijiminfu(四季民福). The prices of roast duck range from 60 yuan to two or three hundreds yuan.</p>
+    <h2>Beijing Alley(Hutong)</h2>
+    <p>Beijing inherits the architectural form of the Yuan Dynasty, and the number has decreased drastically due to urban construction. Some famous Hutong in Beijing are "Nanluoguxiang(南锣鼓巷),
+        Guozijian(国子监), Wudaoying(五道营). These are cultural blocks that have already been commercialized. If you want to experience the local Hutong, there are also ones that local people live in,
+        which
+        can be visted by bike or on foot.</p>
+    <h1>Travel Reminders</h1>
+    <h2>Traffic Jam</h2>
+    <p>The traffic congestion in beijing is often beyond your imagination. Choosing a good time and transportation is the only way to avoid congestion. The Subway is the best choice to guarantee
+        travel
+        time. The public transportations in Beijing is very well developed. You can get to almost everywhere by Subway. However, in the peak hour, the Subway can get very crowded. In recent years, the
+        development of shared bikes bring the people another way of traveling. You can see shared bikes everywhere and all you need to do is download an App and you can start riding the bicycle! It is
+        also a way to save time and be environmentally friendly</p>
+    <h2>Weather</h2>
+    <p>Due to heavy development of the city, Beijing is inevitably suffering from air pollution. For sensitive people traveling in the days when PM2.5 is high, buying masks in convenience store can be
+        a
+        good choice. Summer is the rainy season of Beijing, bringing an umbrella might be neccessary.</p>
+    <h1>Recommended Days of Travel</h1>
+    <p>3-5 days.</p>
+    <p>Beijing's famous attractions are relatively concentrated. Therefore, 3 days are enough for visiting the famous attractions. However, if you want to experience the scenary of the surrounding
+        suburbs, you can increase your travel day by one per place you go because Beijing is very big.</p>
+
+    <audio controls>
+        <source src="media/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <hr>
+    <div class="footer">
+
         <a href="index.htm">Home</a>
         <a href="1beijingculture.htm">Culture and History</a>
         <a href="2beijingtouristattraction.htm">Points of Interest</a>
@@ -53,20 +155,65 @@
         <a href="204tiantan.htm">Hutong</a>
         <a href="205yuanmingyuan.htm">Sanlitun</a>
         <a href="3beijingfood.htm">Food</a>
-        <a href="301restaurants.htm">Restaurants</a>
         <a href="4beijingcurrentevents.htm">Current Events</a>
-        <a href="401sports.htm">Current Sports Events</a>
-        <a href="402exhibition.htm">Current Exhibitions</a>
-        <a href="403concerts.htm">Current Concerts</a>
         <a href="5contactform.htm">Contact Us</a>
+    </div>
+</div>
+
+<script>
+  let wrap = document.querySelector(".wrap");
+  let next = document.querySelector(".arrow_right");
+  let prev = document.querySelector(".arrow_left");
+  next.onclick = function () {
+    next_pic();
+  }
+  prev.onclick = function () {
+    prev_pic();
+  }
+
+  function next_pic() {
+    let newLeft;
+    console.log(wrap.style.left);
+    if (wrap.style.left === "-1200px") {
+      newLeft = 0;
+    } else {
+      newLeft = parseInt(wrap.style.left) - 600;
+    }
+    wrap.style.left = newLeft + "px";
+  }
+
+  function prev_pic() {
+    console.log(wrap.style.left);
+
+    let newLeft;
+    if (wrap.style.left === "0px") {
+      newLeft = -1200;
+    } else {
+      newLeft = parseInt(wrap.style.left) + 600;
+    }
+    wrap.style.left = newLeft + "px";
+  }
+
+  let timer = null;
+
+  function autoPlay() {
+    timer = setInterval(function () {
+      next_pic();
+    }, 1000);
+  }
+
+  autoPlay();
+
+  var container = document.querySelector(".container");
+  container.onmouseenter = function () {
+    clearInterval(timer);
+  }
+  container.onmouseleave = function () {
+    autoPlay();
+  }
 
 
-
-
-        
-    
-
+</script>
 
 </body>
-
 </html>

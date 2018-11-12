@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--I, Xinyi Chen, pledge my honor that I have neither received nor provided unauthorized assistance
+during the completion of this work. I have read the term project instructions and observed all the
+restrictions and limitations specified therein.-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+     http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>1beijingculture.htm</loc>
+    </url>
+    <url>
+        <loc>2beijingtouristattraction.htm</loc>
+    </url>
+    <url>
+        <loc>3beijingfood.htm</loc>
+    </url>
+    <url>
+        <loc>4beijingcurrentevents.htm</loc>
+    </url>
+    <url>
+        <loc>5contactform.htm</loc>
+    </url>
+
+    <url>
+        <loc>201Forbiddencity.htm</loc>
+    </url>
+    <url>
+        <loc>202Summerpalace.htm</loc>
+    </url>
+    <url>
+        <loc>203Greatwall.htm</loc>
+    </url>
+
+    <url>
+        <loc>204tiantan.htm</loc>
+    </url>
+    <url>
+        <loc>205yuanmingyuan.htm</loc>
+    </url>
+    <url>
+        <loc>index.htm</loc>
+    </url>
+</urlset>

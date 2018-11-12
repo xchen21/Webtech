@@ -2,73 +2,189 @@
 <html>
 
 <head>
-        <meta charset="UTF-8">
-        <title>Trip in Beijing-Points of Interests </title>
-        <link rel="stylesheet" href="style.css">
-       
+    <meta charset="UTF-8">
+    <title>Trip in Beijing-Points of Interests </title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #e9f1f6;
+        }
+
+        h2 a {
+            text-decoration: none;
+            font-family: Broadway;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .secondary-image {
+            height: 200px;
+            width: 50%;
+        }
+
+        .container {
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .half {
+            padding: 1%;
+            width: 48%;
+            float: left;
+        }
+
+    </style>
 
 </head>
 
 <body>
-        <a href="1beijingculture.htm">Culture</a>
-        <a href="2beijingtouristattraction.htm">Attractions</a>
-        <a href="3beijingfood.htm">Food</a>
-        <a href="4beijingcurrentevents.htm">Discover</a>
-        <a href="5contactform.htm">Contact Us</a>
-        <h1>Overview</h1>
-        <p>Beijing is a fascinating city with both classic and modern flair. Small alleys, old teahouses, trendy bar streets, bustling commercial districts, infinite modern elements and old Beijing authentic Beijing flavors blend together to build a profound cultural heritage and orthodoxy of Beijing City without losing its elegant lifestyle. The places that must come to Beijing are not Tiananmen, the Forbidden City, and the Great Wall. In addition, you can make a variety of choices based on your interests. Whether it is a couple traveling or a parent-child tour, looking for a royal monument or a fashion district, you can find the best place to go in Beijing.</p>
-        <h1>Must Go Top 5</h1>
-        <ol>
-        <li><a href="201forbiddencity.htm">The Forbidden City</a></li>
-        <img src="image/forbiddencity.jpeg" alt="forbidden city">
-        <img src="image/gugong1.png" alt="forbidden city">
-        <img src="image/gugong2.jpeg" alt="forbidden city">
-        <p>The most complete and largest wooden structure in China and the world, and a world class museum with more than one million pieces</p>
-        <li><a href="202summerpalace.htm">Summer Palace</a></li>
-        <img src="image/yiheyuan1.jpeg" alt="Summer Palace">
-        <img src="image/yiheyuan2.jpeg" alt="Summer Palace">
-        <img src="image/yiheyuan3.jpeg" alt="Summer Palace">
-        <p>The most well-preserved Royal Palace Royal Garden, known as the “Royal Garden Museum”.</p>
-        <li><a href="203greatwall.htm">The Great Wall of China</a></li>
-        <img src="image/greatwall1.jpeg" alt="The Great Wall">
-        <img src="image/greatwall2.jpeg" alt="The Great Wall">
-        <img src="image/greatwall3.jpeg" alt="The Great Wall">
-        <p>The Great Wall of China is the greatest architectural project in the history of human civilization. It was built in the Spring and Autumn Period and the Warring States Period more than 2,000 years ago. After the Qin Dynasty unified China, it joined the Great Wall.</p>
-        <li><a href="204tiantan.htm">Temple of Heaven</a></li>
-        <img src="image/tiantan1.jpeg" alt="Temple of Heaven">
-        <img src="image/tiantan2.jpeg" alt="Temple of Heaven">
-        <img src="image/tiantan3.jpeg" alt="Temple of Heaven">
-        <p>It is where the Emperor of the Ming and Qing Dynasties worshipped the god of heaven and earth and prayed for the harvest of the grain.</p>
-        <li><a href="205yuanmingyuan.htm">The Old Summer Palace</a></li>
-        <img src="image/yuanmingyuan1.jpeg" alt="The Old Summer Palace">
-        <img src="image/yuanmingyuan2.jpeg" alt="The Old Summer Palace">
-        <img src="image/yuanmingyuan3.jpeg" alt="The Old Summer Palace">
-        <p>The Royal Palace in the Qing Dynasty. It is now ruined and tells the past unforgettable history.</p>
-        </ol>
-        <h1>Beijing Attractions Map</h1>
-        <img src="image/map.jpg" width="800" height="700" alt="Beijing Attractions Map" usemap="#map">
-        <map name="Beijing Attractions Map">
+<header id="header">
+    <ul>
+        <li><a href="1beijingculture.htm">Culture</a></li>
+        <li class="active"><a href="2beijingtouristattraction.htm">Attractions</a></li>
+        <li><a href="3beijingfood.htm">Food</a></li>
+        <li><a href="4beijingcurrentevents.htm">Discover</a></li>
+        <li><a href="5contactform.htm">Contact Us</a></li>
+    </ul>
+</header>
+<div class="content">
+    <h1>Overview</h1>
+    <p>Beijing is a fascinating city with both classic and modern flair. Small alleys, old teahouses, trendy bar streets, bustling commercial districts, infinite modern elements and old Beijing
+        authentic Beijing flavors blend together to build a profound cultural heritage and orthodoxy of Beijing City without losing its elegant lifestyle. The places that must come to Beijing are not
+        Tiananmen, the Forbidden City, and the Great Wall. In addition, you can make a variety of choices based on your interests. Whether it is a couple traveling or a parent-child tour, looking for
+        a royal monument or a fashion district, you can find the best place to go in Beijing.</p>
+    <h1>Must Go Top 5</h1>
+
+    <div style="background-color: #4CAF50">
+
+        <h2><a href="201forbiddencity.htm">The Forbidden City</a></h2>
+        <div style="width: 100%; height: 600px">
+            <div class="half">
+
+                <img src="image/forbiddencity.jpeg" class="main-image" alt="forbidden city">
+                <div class="container">
+                    <img src="image/gugong1.png" class="secondary-image" alt="forbidden city">
+                    <img src="image/gugong2.jpeg" class="secondary-image" alt="forbidden city">
+                </div>
+            </div>
+            <div class="half">
+                <p>The most complete and largest wooden structure in China and the world, and a world class museum with
+                    more than one million pieces</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="background-color: deepskyblue">
+        <h2><a href="202summerpalace.htm">Summer Palace</a></h2>
+        <div style="width: 100%; height: 600px">
+            <div class="half">
+                <img src="image/yiheyuan1.jpeg" class="main-image" alt="Summer Palace">
+                <div class="container">
+
+                    <img src="image/yiheyuan2.jpeg" class="secondary-image" alt="Summer Palace">
+                    <img src="image/yiheyuan3.jpeg" class="secondary-image" alt="Summer Palace">
+                </div>
+            </div>
+            <div class="half">
+
+                <p>The most well-preserved Royal Palace Royal Garden, known as the “Royal Garden Museum”.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="background-color: lightpink">
+
+
+        <h2><a href="203greatwall.htm">The Great Wall of China</a></h2>
+        <div style="width: 100%; height: 600px">
+            <div class="half">
+                <img src="image/greatwall1.jpeg" class="main-image" alt="The Great Wall">
+                <div class="container">
+
+                    <img src="image/greatwall2.jpeg" class="secondary-image" alt="The Great Wall">
+                    <img src="image/greatwall3.jpeg" class="secondary-image" alt="The Great Wall">
+                </div>
+            </div>
+            <div class="half">
+                <p>The Great Wall of China is the greatest architectural project in the history of human civilization. It was built in the Spring and Autumn Period and the Warring States Period more
+                    than
+                    2,000 years ago. After the Qin Dynasty unified China, it joined the Great Wall.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: lightgoldenrodyellow">
+
+        <h2><a href="204tiantan.htm">Temple of Heaven</a></h2>
+        <div style="width: 100%; height: 600px">
+            <div class="half">
+                <img src="image/tiantan1.jpeg" class="main-image" alt="Temple of Heaven">
+                <div class="container">
+
+                    <img src="image/tiantan2.jpeg" class="secondary-image" alt="Temple of Heaven">
+                    <img src="image/tiantan3.jpeg" class="secondary-image" alt="Temple of Heaven">
+                </div>
+            </div>
+            <div class="half">
+                <p>It is where the Emperor of the Ming and Qing Dynasties worshipped the god of heaven and earth and prayed for the harvest of the grain.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: lightblue">
+
+
+        <h2><a href="205yuanmingyuan.htm">The Old Summer Palace</a></h2>
+        <div style="width: 100%; height: 600px">
+            <div class="half">
+                <img src="image/yuanmingyuan1.jpeg" class="main-image" alt="The Old Summer Palace">
+                <div class="container">
+
+                    <img src="image/yuanmingyuan2.jpeg" class="secondary-image" alt="The Old Summer Palace">
+
+                    <img src="image/yuanmingyuan3.jpeg" class="secondary-image" alt="The Old Summer Palace">
+                </div>
+            </div>
+            <div class="half">
+                <p>The Royal Palace in the Qing Dynasty. It is now ruined and tells the past unforgettable history.</p>
+            </div>
+        </div>
+    </div>
+    <h1>Beijing Attractions Map</h1>
+    <img src="image/map.jpg" width="800" height="700" alt="Beijing Attractions Map" usemap="#map">
+    <map name="Beijing Attractions Map">
         <area shape="rect" coords="297,319,394,402" href="201forbiddencity.htm" alt="The Forbidden City">
         <area shape="rect" coords="222,73,347,176" href="202SummerPalace.htm" alt="Summer Palace">
         <area shape="rect" coords="22,487,146,589" href="203Greatwall.htm" alt="The Great Wall">
         <area shape="rect" coords="605,550,717,642" href="204tiantan.htm" alt="Temple of Heaven">
         <hr>
-        <a href="index.htm">Home</a>
-        <a href="1beijingculture.htm">Culture and History</a>
-        <a href="2beijingtouristattraction.htm">Points of Interest</a>
-        <a href="201Forbiddencity.htm">The Forbidden City</a>
-        <a href="202Summerpalace.htm">Summer Palace</a>
-        <a href="203Greatwall.htm">The Great Wall of China</a>
-        <a href="204tiantan.htm">Hutong</a>
-        <a href="205yuanmingyuan.htm">Sanlitun</a>
-        <a href="3beijingfood.htm">Food</a>
-        <a href="301restaurants.htm">Restaurants</a>
-        <a href="4beijingcurrentevents.htm">Current Events</a>
-        <a href="401sports.htm">Current Sports Events</a>
-        <a href="402exhibition.htm">Current Exhibitions</a>
-        <a href="403concerts.htm">Current Concerts</a>
-        <a href="5contactform.htm">Contact Us</a>
 
+        <div class="footer">
+
+            <a href="index.htm">Home</a>
+            <a href="1beijingculture.htm">Culture and History</a>
+            <a href="2beijingtouristattraction.htm">Points of Interest</a>
+            <a href="201Forbiddencity.htm">The Forbidden City</a>
+            <a href="202Summerpalace.htm">Summer Palace</a>
+            <a href="203Greatwall.htm">The Great Wall of China</a>
+            <a href="204tiantan.htm">Hutong</a>
+            <a href="205yuanmingyuan.htm">Sanlitun</a>
+            <a href="3beijingfood.htm">Food</a>
+            <a href="4beijingcurrentevents.htm">Current Events</a>
+            <a href="5contactform.htm">Contact Us</a>
+        </div>
+
+
+</div>
 </body>
 
 </html>
