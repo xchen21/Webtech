@@ -14,21 +14,28 @@
             }
         </style>
         <script type="text/javascript">
-            function enlarge(){
+            function enlarge(x){
                 let i = document.getElementById("map");
+                i.style.zIndex = 10;
                 let w= i.width;
                 //alert(w);
                 i.width= w* (1+0.5);
                 //alert("w:" + w +".The current width" + w)
-            function shrink(){
-                let i= document.getElementById("map");
+                i.style.border = "red 1px solid";
+                parent = document.getElementById(x).parentElement;
+                parent.style.zIndex = 999;
+                parent.style.position = "relative";
+            };
+
+            function shrink(x){
+                let i= document.getElementById("x");
                 let w= i.width;
                 //alert(w);
-                i.width= s/ (1+0.5);
+                i.width= w/ (1+0.5);
                 i.style.border= "none";
-    
-        
-            }
+                parent= document.getElementById(x).parentElement;
+                parent.style.zIndex = 1;
+                parent.style.position = "absolute";
 
             };
 
@@ -41,9 +48,19 @@
 
         <h2> Manipulating Styles and Images </h2>
 
-        <p><img src="images/usa.png" alt="Image goes here" title="map of USA" width="400" onmouseover="enlarge()" onmouseout="AbortController" id= "map"></p>
- 
-        <hr>
+        <div id="d1">
+            <img src="images/usa.png" alt="image goes here" title= "map of USA" width="300" onmouseover="enlarge(this.id)" onmouseout="shrink(third.id)" id="map">
+        </div>
+
+        <div id="d2">
+        
+        <img src="images/Middlesex.gif" width="300" onmouseover="enlarge(this.id)" onmouseout="shrink(this.id)" id="second">
+        </div>
+
+        <div id="d3">
+            <img src="images/tiger1.jpg" width="300" onmouseover="enlarge(this.id)" onmouseout="shrink(this.id)" id="tiger">
+        </div>
+        
 
     </body>
 
