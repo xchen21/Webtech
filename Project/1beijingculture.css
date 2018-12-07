@@ -5,3 +5,15 @@
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
+body {
+    background: #f0f0f4;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content img {
+     float: left;
+     height: 380px;
+     width: 600px;
+     margin-right: 20px;
+ }

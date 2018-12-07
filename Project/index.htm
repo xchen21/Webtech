@@ -10,22 +10,10 @@
 
         body {
             background: #e9e7ef;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
         }
-
-        .container {
-            position: relative;
-            width: 600px;
-            height: 400px;
-            margin: 100px auto 0 auto;
-            box-shadow: 0 0 5px green;
-            overflow: hidden;
-        }
-
-        .wrap {
-            position: absolute;
-            width: 2400px;
-            height: 400px;
-            z-index: 1;
+        h1{
+            text-align: center;
         }
 
         .container .wrap img {
@@ -46,36 +34,12 @@
             cursor: pointer;
         }
 
-        .container .buttons span.on {
-            background-color: red;
-        }
-
-        .container .arrow {
+        .slider {
+            width: 100vw;
+            height: 80vh;
             position: absolute;
-            top: 35%;
-            color: green;
-            padding: 0px 14px;
-            border-radius: 50%;
-            font-size: 50px;
-            z-index: 2;
-            display: none;
         }
 
-        .container .arrow_left {
-            left: 10px;
-        }
-
-        .container .arrow_right {
-            right: 10px;
-        }
-
-        .container:hover .arrow {
-            display: block;
-        }
-
-        .container .arrow:hover {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
     </style>
 
 </head>
@@ -83,33 +47,50 @@
 
 <body>
 
-<header id="header">
-    <ul>
-        <li class="active"><a href="1beijingculture.htm">Culture</a></li>
-        <li><a href="2beijingtouristattraction.htm">Attractions</a></li>
-        <li><a href="3beijingfood.htm">Food</a></li>
-        <li><a href="4beijingcurrentevents.htm">Discover</a></li>
-        <li><a href="5contactform.htm">Contact Us</a></li>
-    </ul>
-</header>
-<div class="content">
-    <div class="container">
-        <div class="wrap" style="left:-600px;">
-            <img src="image/banner1.jpg">
-            <img src="image/banner2.jpg">
-            <img src="image/banner3.jpg">
-        </div>
-
-        <a style="text-decoration: none" href="javascript:;" class="arrow arrow_left">&lt;</a>
-        <a style="text-decoration: none" href="javascript:;" class="arrow arrow_right">&gt;</a>
+<header id="header" style="height: auto">
+    <div style="position: absolute; z-index: 1000;top: 0;left: 0;right: 0;" onmouseover="hoverOnHeader(this)" onmouseout="hoverOutHeader(this)">
+        <a href="index.htm" class="logo-container">
+            <img src="image/logo.jpg">
+        </a>
+        <ul>
+            <li class="active"><a href="index.htm">Home</a></li>
+            <li><a href="1beijingculture.htm">Culture</a></li>
+            <li onmouseover="hoverOnAttractionsMenu()" onmouseout="hoverOutAttractionsMenu()">
+                <a href="2beijingtouristattraction.htm" id="attractionsMenu">Attractions</a>
+                <ul id="attractions" style="display: none;flex-direction: column;background-color: white;">
+                    <li><a href="201Forbiddencity.htm" style="color: black;">Forbiddencity</a></li>
+                    <li><a href="202Summerpalace.htm" style="color: black;">Summerpalace</a></li>
+                    <li><a href="203Greatwall.htm" style="color: black;">The Great Wall of China</a></li>
+                    <li><a href="204tiantan.htm" style="color: black;">Temple of Heaven</a></li>
+                    <li><a href="205yuanmingyuan.htm" style="color: black;">The Old Summer Palace</a></li>
+                </ul>
+            </li>
+            <li><a href="3beijingfood.htm">Food</a></li>
+            <li><a href="4beijingcurrentevents.htm">Discover</a></li>
+            <li><a href="5contactform.htm">Contact Us</a></li>
+        </ul>
     </div>
+
+</header>
+<div >
+    <div  class="slider">
+        <img style="width: 100vw; height: 80vh;" src="image/banner1.jpg">
+        <img style="width: 100vw; height: 80vh;" src="image/banner2.jpg">
+        <img style="width: 100vw; height: 80vh;" src="image/banner3.jpg">
+    </div>
+</div>
+
+
+<div class="content">
+    <h1 style="font-size: 50px;">BEIJING</h1>
+   
 
     <p>Bejing is the capital of China, a world famous historical city and cultural city. It is the political, economic, transportation, and cultural center of the country. It is a fusion of China's
         splendid culture and art, leaving many places of interest and cutural landscapes. In recent years, Beijing has also become one of the top destination for tourism. Not only can you experience
         full
         of history from the city, you can also enjoy vibrant activities and delicious food.</p>
     <h1>Beijing Overview</h1>
-    <img src="image/forbiddencity.jpeg" alt="forbiddencity">
+    <img src="image/forbiddencity.jpeg" alt="forbiddencity" style="float: left;height: 400px;width: 600px;margin-right: 20px;">
     <h2>The Forbidden City</h2>
     <p>Located in the center of Beijing, it is the most royal example of Beijing, the most famous museum in China. Formely known as the imperial palace of the Ming and Qing Dynasties, it is now the
         palace
@@ -160,60 +141,45 @@
     </div>
 </div>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script>
-  let wrap = document.querySelector(".wrap");
-  let next = document.querySelector(".arrow_right");
-  let prev = document.querySelector(".arrow_left");
-  next.onclick = function () {
-    next_pic();
-  }
-  prev.onclick = function () {
-    prev_pic();
-  }
-
-  function next_pic() {
-    let newLeft;
-    console.log(wrap.style.left);
-    if (wrap.style.left === "-1200px") {
-      newLeft = 0;
-    } else {
-      newLeft = parseInt(wrap.style.left) - 600;
-    }
-    wrap.style.left = newLeft + "px";
-  }
-
-  function prev_pic() {
-    console.log(wrap.style.left);
-
-    let newLeft;
-    if (wrap.style.left === "0px") {
-      newLeft = -1200;
-    } else {
-      newLeft = parseInt(wrap.style.left) + 600;
-    }
-    wrap.style.left = newLeft + "px";
-  }
-
-  let timer = null;
-
-  function autoPlay() {
-    timer = setInterval(function () {
-      next_pic();
-    }, 1000);
-  }
-
-  autoPlay();
-
-  var container = document.querySelector(".container");
-  container.onmouseenter = function () {
-    clearInterval(timer);
-  }
-  container.onmouseleave = function () {
-    autoPlay();
-  }
-
-
+  $(document).ready(function () {
+    $('.slider').bxSlider();
+  });
 </script>
+<script>
+  function hoverOnHeader() {
+    console.log("On");
+    let a = $("#header a");
+    // let a = document.getElementById("header").getElementsByTagName("a");
+    for (let i = 0, j = a.length; i < j; i++) {
+      a[i].style.setProperty("color", "black");
+    }
+  }
 
+  function hoverOutHeader() {
+    console.log("Out");
+    let a = $("#header a");
+    // let a = document.getElementById("header").getElementsByTagName("a");
+    for (let i = 0, j = a.length; i < j; i++) {
+      a[i].style.setProperty("color", "white");
+    }
+  }
+
+  function hoverOnAttractionsMenu() {
+    let attractionsMenu = $("#attractions");
+    // let attractionsMenu = document.getElementById("attractions");
+    attractionsMenu.css("display", "flex");
+  }
+
+  function hoverOutAttractionsMenu() {
+    let attractionsMenu = $("#attractions");
+    // let attractionsMenu = document.getElementById("attractions");
+    attractionsMenu.css("display", "none");
+  }
+</script>
 </body>
 </html>

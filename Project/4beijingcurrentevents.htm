@@ -9,41 +9,73 @@
     <style>
         body {
             background: #e3f9fd;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        .content img {
+            float: left;
+            height: 380px;
+            width: 340px;
+            margin-right: 20px;
         }
     </style>
 
 </head>
 
 <body>
-<header id="header">
-    <ul>
-        <li><a href="1beijingculture.htm">Culture</a></li>
-        <li><a href="2beijingtouristattraction.htm">Attractions</a></li>
-        <li><a href="3beijingfood.htm">Food</a></li>
-        <li class="active"><a href="4beijingcurrentevents.htm">Discover</a></li>
-        <li><a href="5contactform.htm">Contact Us</a></li>
-    </ul>
+<header id="header" style="background-image: url('image/banner/banner5.jpg');">
+    <div onmouseover="hoverOnHeader(this)" onmouseout="hoverOutHeader(this)">
+        <a href="index.htm"  class="logo-container">
+            <img src="image/logo.jpg">
+        </a>
+        <ul >
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="1beijingculture.htm">Culture</a></li>
+            <li  onmouseover="hoverOnAttractionsMenu()" onmouseout="hoverOutAttractionsMenu()">
+                <a href="2beijingtouristattraction.htm" id="attractionsMenu">Attractions</a>
+                <ul id="attractions" style="display: none;flex-direction: column;background-color: white;">
+                    <li><a href="201Forbiddencity.htm" style="color: black;">Forbiddencity</a></li>
+                    <li><a href="202Summerpalace.htm" style="color: black;">Summerpalace</a></li>
+                    <li><a href="203Greatwall.htm" style="color: black;">The Great Wall of China</a></li>
+                    <li><a href="204tiantan.htm" style="color: black;">Temple of Heaven</a></li>
+                    <li><a href="205yuanmingyuan.htm" style="color: black;">The Old Summer Palace</a></li>
+                </ul>
+            </li>
+            <li><a href="3beijingfood.htm">Food</a></li>
+            <li class="active"><a href="4beijingcurrentevents.htm">Discover</a></li>
+            <li><a href="5contactform.htm">Contact Us</a></li>
+        </ul>
+    </div>
+
 </header>
 <div class="content">
 
-    <h1><a href="401sports.htm">Current Sports Events</a></h1>
+    <h1>Current Sports Events</h1>
     <h2>Beijing Sinobo Guoan Soccor Game</h2><br>
     <img src="image/Beijing Sinobo Guoan FC.png" alt="Guo An Soccer Club">
-    <p>Beijing Sinobo Guoan F.C. is a professional Chinese football club that currently participates in the Chinese Super League under license from the Chinese Football Association. The team is based
+    <p>Beijing Sinobo Guoan F.C. is a professional Chinese football club that currently participates in the Chinese
+        Super League under license from the Chinese Football Association. The team is based
         in the Chaoyang District in beijing and their home stadium is the Worker's Stadium.</p>
-    <h1><a href="402exhibition.htm">Current Exhibitions</a></h1>
+    <div class="clear"></div>
+    <h1>Current Exhibitions</h1>
     <h2>Jaime Hayon- Funtastico</h2>
     <img src="image/funtastico.jpg" alt="Jamie Hayon-Funtastico">
-    <p>Jamie Hayon is good at translating ideas into reality. The exhibition combines fashion, practicality and fun to inspire people's aesthetic thinking. At the same time. it brings more people the
-        combination of art and design. In the exhibition you can see a lot of fantasy works. From inside and out, it perfectly explains the unique and fantastic design concept of Jamie Hayon.</p>
-    <h1><a href="403concerts">Current Concerts</a></h1>
+    <p>Jamie Hayon is good at translating ideas into reality. The exhibition combines fashion, practicality and fun to
+        inspire people's aesthetic thinking. At the same time. it brings more people the
+        combination of art and design. In the exhibition you can see a lot of fantasy works. From inside and out, it
+        perfectly explains the unique and fantastic design concept of Jamie Hayon.</p>
+    <div class="clear"></div>
+    <h1>Current Concerts</h1>
     <h2>Sam Smith Bejing Concert 2018</h2>
     <img src="image/samsmith.jpg" alt="Sam Smith Concert 2018">
     <p>Sam Smith will come to China for the first time, to open his world tour.</p>
+    <div class="clear"></div>
     <h2>Broadway Show: Rent- 20th Anniversary</h2>
     <img src="image/rent.jpg" alt="Rent Broadway">
-    <p>The most award-winning repertoire in musical history, sweeping the 1996 Pulitzer Prize for Drama, Tony Award for Best Musical, Best Musical Screenwriter, Best Original Music, Best Musical
+    <p>The most award-winning repertoire in musical history, sweeping the 1996 Pulitzer Prize for Drama, Tony Award for
+        Best Musical, Best Musical Screenwriter, Best Original Music, Best Musical
         Supporting Actor, New York Theatre Forum Award and others.</p>
+    <div class="clear" style="margin-bottom: 30px;"></div>
     <hr>
     <div class="footer">
 
@@ -61,7 +93,38 @@
     </div>
 
 </div>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+<script>
+    function hoverOnHeader() {
+        console.log("On");
+        let a = $("#header a");
+        // let a = document.getElementById("header").getElementsByTagName("a");
+        for(let i=0,j=a.length;i<j;i++){
+            a[i].style.setProperty("color", "black");
+        }
+    }
 
+    function hoverOutHeader() {
+        console.log("Out");
+        let a = $("#header a");
+        // let a = document.getElementById("header").getElementsByTagName("a");
+        for(let i=0,j=a.length;i<j;i++){
+            a[i].style.setProperty("color", "white");
+        }
+    }
+
+    function hoverOnAttractionsMenu() {
+        let attractionsMenu = $("#attractions");
+        // let attractionsMenu = document.getElementById("attractions");
+        attractionsMenu.css("display", "flex");
+    }
+
+    function hoverOutAttractionsMenu() {
+        let attractionsMenu = $("#attractions");
+        // let attractionsMenu = document.getElementById("attractions");
+        attractionsMenu.css("display", "none");
+    }
+</script>
 </body>
 
 </html>

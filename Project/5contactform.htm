@@ -7,49 +7,125 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
-        function onButtonClick(e) {
-          alert('Thank you!');
-        }
+      function onButtonClick(e) {
+
+      }
     </script>
 
     <style>
         body {
             background: #d6ecf0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        .myForm div {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 30px;
+        }
+
+        .myForm div input, textarea {
+            margin: 10px 0;
+            border: 1px solid #001;
+            height: 30px;
+            border-radius: 3px;
+            padding-left: 10px;
+            font-size: 13px;
+        }
+
+        .myButton {
+            background-color: #00a65a;
+            border-radius: 3px;
+            box-shadow: none;
+            padding: 5px 10px;
+            font-size: 15px;
+            line-height: 1.5;
+            border: 1px solid transparent;
+            font-weight: 600;
+        }
+
+        .high {
+            color: red;
+        }
+
+        .msg {
+            font-size: 13px;
+        }
+
+        .onError {
+            color: red;
+        }
+
+        .onSuccess {
+            color: green;
         }
     </style>
 
 </head>
 
 <body>
-<header id="header">
-    <ul>
-        <li><a href="1beijingculture.htm">Culture</a></li>
-        <li><a href="2beijingtouristattraction.htm">Attractions</a></li>
-        <li><a href="3beijingfood.htm">Food</a></li>
-        <li><a href="4beijingcurrentevents.htm">Discover</a></li>
-        <li class="active"><a href="5contactform.htm">Contact Us</a></li>
-    </ul>
+<header id="header" style="background-image: url('image/banner/banner6.jpg');">
+    <div onmouseover="hoverOnHeader(this)" onmouseout="hoverOutHeader(this)">
+        <a href="index.htm" class="logo-container">
+            <img src="image/logo.jpg">
+        </a>
+        <ul>
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="1beijingculture.htm">Culture</a></li>
+            <li onmouseover="hoverOnAttractionsMenu()" onmouseout="hoverOutAttractionsMenu()">
+                <a href="2beijingtouristattraction.htm" id="attractionsMenu">Attractions</a>
+                <ul id="attractions" style="display: none;flex-direction: column;background-color: white;">
+                    <li><a href="201Forbiddencity.htm" style="color: black;">Forbiddencity</a></li>
+                    <li><a href="202Summerpalace.htm" style="color: black;">Summerpalace</a></li>
+                    <li><a href="203Greatwall.htm" style="color: black;">The Great Wall of China</a></li>
+                    <li><a href="204tiantan.htm" style="color: black;">Temple of Heaven</a></li>
+                    <li><a href="205yuanmingyuan.htm" style="color: black;">The Old Summer Palace</a></li>
+                </ul>
+            </li>
+            <li><a href="3beijingfood.htm">Food</a></li>
+            <li><a href="4beijingcurrentevents.htm">Discover</a></li>
+            <li class="active"><a href="5contactform.htm">Contact Us</a></li>
+        </ul>
+    </div>
+
 </header>
 <div class="content">
-
-    <h2>Phone</h2>
-    <p>9178213680</p>
-    <h2>Email</h2>
-    <p>xchen21@babson.edu</p>
-    <form>
-        First Name:<br>
-        <input type="text" name="firstname"><br>
-        Last Name:<br>
-        <input type="text" name="lastname"><br>
-        Phone Number:<br>
-        <input type="number" name="phonenumber"><br>
-        Email:<br>
-        <input type="text" name="email"><br>
-        Comment:<br>
-        <input type="text" name="Comment"><br><br>
+    <div style="display: inline-block;margin-right: 100px">
+        <h2>Phone</h2>
+        <p>9178213680</p>
+    </div>
+    <div style="display: inline-block;">
+        <h2>Email</h2>
+        <p>xchen21@babson.edu</p>
+    </div>
+    <form class="myForm">
+        <div>
+            <span>
+            <a>First Name:</a><br>
+            <input type="text" name="firstname" id="first_name" placeholder="firstName" class="required"><br>
+                </span>
+            <span><br>
+            <a>Phone Number:</a><br>
+            <input type="number" id="phone" name="phonenumber" placeholder="phoneNumber" class="required"><br>
+                </span>
+        </div>
+        <div>
+            <span>
+            <a>Last Name:</a><br>
+            <input type="text" name="lastname" id="name" placeholder="lastName" class="required"><br>
+            </span><br>
+            <span>
+            <a>Email:</a><br>
+            <input type="text" name="email" placeholder="email" id="email" class="required"><br>
+                </span>
+        </div>
+        <div>
+            <a>Comment:</a><br>
+            <textarea name="Comment" placeholder="Give us your comments!" style="height: 104px;resize:none" class="required"></textarea><br><br>
+        </div>
     </form>
-    <button onclick="onButtonClick()">submit</button>
-    <hr>
+    <button class="myButton" onclick="onButtonClick()" onmouseover="this.style.backgroundColor='#5cb85c'" onmouseout="this.style.backgroundColor='#00a65a'">submit</button>
+    <hr style="margin-top: 30px">
     <div class="footer">
 
         <a href="index.htm">Home</a>
@@ -66,6 +142,122 @@
     </div>
 
 </div>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script>
+
+  $(function () {
+    
+    $("form :input.required").each(function () {
+      $(this).find('.high').remove();
+      
+      var $required = $("<strong class='high'>*</strong>");
+    
+      $(this).parent().append($required);
+    });
+
+
+    $("form :input").blur(function () {
+
+        var $parent = $(this).parent();
+
+        $parent.find(".msg").remove();
+        $parent.find(".high").remove();
+
+        //name
+        if ($(this).is("#name")) {
+          var nameVal = $.trim(this.value); 
+          var regName = /[~#^$@%&!*()<>:;'"{}【】  ]/;
+          if (nameVal == "" || nameVal.length < 2 || regName.test(nameVal)) {
+            var errorMsg = " Please Input Your Name！";
+            
+            $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
+          }
+          else {
+            var okMsg = " Ok";
+            $parent.find(".msg").remove();
+            $parent.find(".high").remove();
+            $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+          }
+        }
+
+        if ($(this).is("#first_name")) {
+          var nameVal = $.trim(this.value); 
+          var regName = /[~#^$@%&!*()<>:;'"{}【】  ]/;
+          if (nameVal == "" || nameVal.length < 2 || regName.test(nameVal)) {
+            var errorMsg = " Please Input Your Name!";
+            
+            $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
+          }
+          else {
+            var okMsg = " Ok";
+            $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+          }
+        }
+
+        if ($(this).is('#phone')) {
+          var regName = /[0-9]+.?/;
+          if (nameVal || nameVal == "" || nameVal.length < 10 || regName.test(nameVal)) {
+            var errorMsg = " not valid";
+            $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
+          } else {
+            var okMsg = " Ok";
+            $parent.find(".high").remove();
+            $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+          }
+        }
+
+
+        if ($(this).is("#email")) {
+          $parent.find(".msg").remove();
+          var emailVal = $.trim(this.value);
+          var regEmail = /.+@.+\.[a-zA-Z]{2,4}$/;
+          if (emailVal == "" || (emailVal != "" && !regEmail.test(emailVal))) {
+            var errorMsg = " Please Enter Correct Email！";
+            $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
+          }
+          else {
+            var okMsg = " Ok";
+            $parent.find(".high").remove();
+            $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+          }
+        }
+      }
+    );
+  });
+
+  function hoverOnHeader() {
+    console.log("On");
+    let a = $("#header a");
+    // let a = document.getElementById("header").getElementsByTagName("a");
+    for (let i = 0, j = a.length; i < j; i++) {
+      a[i].style.setProperty("color", "black");
+    }
+  }
+
+  function hoverOutHeader() {
+    console.log("Out");
+    let a = $("#header a");
+    // let a = document.getElementById("header").getElementsByTagName("a");
+    for (let i = 0, j = a.length; i < j; i++) {
+      a[i].style.setProperty("color", "white");
+    }
+  }
+
+  function hoverOnAttractionsMenu() {
+    let attractionsMenu = $("#attractions");
+    // let attractionsMenu = document.getElementById("attractions");
+    attractionsMenu.css("display", "flex");
+  }
+
+  function hoverOutAttractionsMenu() {
+    let attractionsMenu = $("#attractions");
+    // let attractionsMenu = document.getElementById("attractions");
+    attractionsMenu.css("display", "none");
+  }
+
+
+</script>
 </body>
 
 </html>

@@ -7,34 +7,69 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        img {
-            width: 30%;
-        }
-
         body {
             background: #d6ecf0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
         }
+        .main-image {
+            width: 65%;
+        }
+
+        .secondary-image {
+            height: 210px;
+        }
+
+        .container {
+            margin-left: 10px;
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
     </style>
 
 </head>
 
 <body>
-<header id="header">
-    <ul>
-        <li><a href="1beijingculture.htm">Culture</a></li>
-        <li class="active"><a href="2beijingtouristattraction.htm">Attractions</a></li>
-        <li><a href="3beijingfood.htm">Food</a></li>
-        <li><a href="4beijingcurrentevents.htm">Discover</a></li>
-        <li><a href="5contactform.htm">Contact Us</a></li>
-    </ul>
+<header id="header" style="background-image: url('image/banner/banner7.jpg');">
+    <div onmouseover="hoverOnHeader(this)" onmouseout="hoverOutHeader(this)">
+        <a href="index.htm"  class="logo-container">
+            <img src="image/logo.jpg">
+        </a>
+        <ul >
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="1beijingculture.htm">Culture</a></li>
+            <li class="active" onmouseover="hoverOnAttractionsMenu()" onmouseout="hoverOutAttractionsMenu()">
+                <a href="2beijingtouristattraction.htm" id="attractionsMenu">Attractions</a>
+                <ul id="attractions" style="display: none;flex-direction: column;background-color: white;">
+                    <li><a href="201Forbiddencity.htm" style="color: black;">Forbiddencity</a></li>
+                    <li><a href="202Summerpalace.htm" style="color: black;">Summerpalace</a></li>
+                    <li><a href="203Greatwall.htm" style="color: black;">The Great Wall of China</a></li>
+                    <li><a href="204tiantan.htm" style="color: black;">Temple of Heaven</a></li>
+                    <li><a href="205yuanmingyuan.htm" style="color: black;">The Old Summer Palace</a></li>
+                </ul>
+            </li>
+            <li><a href="3beijingfood.htm">Food</a></li>
+            <li><a href="4beijingcurrentevents.htm">Discover</a></li>
+            <li><a href="5contactform.htm">Contact Us</a></li>
+        </ul>
+    </div>
+
 </header>
 
 <div class="content" style="padding-top: 50px;">
-    <div style="display: flex; flex-direction: row; justify-content: space-between">
-        <img src="image/gugong4.jpeg" alt="The Forbidden City">
-        <img src="image/gugong5.jpeg" alt="The Forbidden City">
-        <img src="image/gugong6.jpeg" alt="The Forbidden City">
+    <h1 style="text-align: center">The Forbidden City</h1>
+    <hr>
+    <div style="display: flex;height: 440px;margin: 30px 0;">
+
+        <img src="image/gugong4.jpeg" class="main-image" alt="forbidden city">
+        <div class="container">
+            <img src="image/gugong5.jpeg" class="secondary-image" alt="forbidden city">
+            <img src="image/gugong6.jpeg" class="secondary-image" alt="forbidden city">
+        </div>
     </div>
+    <hr>
     <p>The Forbidden City is a palace complex in central Beijing, China. The former Chinese imperial palace from the Ming dynasty to the end of the Qing dynasty (the years 1420 to 1912), it now houses
         the Palace Museum. The Forbidden City served as the home of emperors and their households as well as the ceremonial and political center of Chinese government for almost 500 years.</p>
     <p>Constructed from 1406 to 1420, the complex consists of 980 buildings and covers 72 hectares (over 180 acres). The palace exemplifies traditional Chinese palatial architecture,[5] and has
@@ -53,10 +88,10 @@
         </tr>
         <tr>
             <td>Apr.1th-Oct.31st Tuesday-Sunday</td>
-            <td>Nov.1th-Mar.31st Tuesday-Sunday</td>
+            <td>08:30-17:00 (last entry:16:10)</td>
         </tr>
         <tr>
-            <td>08:30-17:00 (last entry:16:10)</td>
+            <td>Nov.1th-Mar.31st Tuesday-Sunday</td>
             <td>08:30-16:30 (last entry:15:40)</td>
         </tr>
         </tr>
@@ -79,7 +114,38 @@
     </div>
 
 </div>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+<script>
+    function hoverOnHeader() {
+        console.log("On");
+        let a = $("#header a");
+        // let a = document.getElementById("header").getElementsByTagName("a");
+        for(let i=0,j=a.length;i<j;i++){
+            a[i].style.setProperty("color", "black");
+        }
+    }
 
+    function hoverOutHeader() {
+        console.log("Out");
+        let a = $("#header a");
+        // let a = document.getElementById("header").getElementsByTagName("a");
+        for(let i=0,j=a.length;i<j;i++){
+            a[i].style.setProperty("color", "white");
+        }
+    }
+
+    function hoverOnAttractionsMenu() {
+        let attractionsMenu = $("#attractions");
+        // let attractionsMenu = document.getElementById("attractions");
+        attractionsMenu.css("display", "flex");
+    }
+
+    function hoverOutAttractionsMenu() {
+        let attractionsMenu = $("#attractions");
+        // let attractionsMenu = document.getElementById("attractions");
+        attractionsMenu.css("display", "none");
+    }
+</script>
 </body>
 
 </html>

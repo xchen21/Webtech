@@ -6,30 +6,41 @@
     <title>Trip in Beijing-Culture and History</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="1beijingculture.css">
-
-    <style>
-        body {
-            background: #f0f0f4;
-        }
-    </style>
-
 </head>
 
 <body>
 
-<header id="header">
-    <ul>
-        <li class="active"><a href="1beijingculture.htm">Culture</a></li>
-        <li><a href="2beijingtouristattraction.htm">Attractions</a></li>
-        <li><a href="3beijingfood.htm">Food</a></li>
-        <li><a href="4beijingcurrentevents.htm">Discover</a></li>
-        <li><a href="5contactform.htm">Contact Us</a></li>
-    </ul>
+<header id="header" style="background-image: url('image/banner/banner2.jpg');">
+    <div onmouseover="hoverOnHeader(this)" onmouseout="hoverOutHeader(this)">
+        <a href="index.htm"  class="logo-container">
+            <img src="image/logo.jpg">
+        </a>
+        <ul>
+            <li><a href="index.htm">Home</a></li>
+            <li class="active"><a href="1beijingculture.htm">Culture</a></li>
+            <li  onmouseover="hoverOnAttractionsMenu()" onmouseout="hoverOutAttractionsMenu()">
+                <a href="2beijingtouristattraction.htm" id="attractionsMenu">Attractions</a>
+                <ul id="attractions" style="display: none;flex-direction: column;background-color: white;">
+                    <li><a href="201Forbiddencity.htm" style="color: black;">Forbiddencity</a></li>
+                    <li><a href="202Summerpalace.htm" style="color: black;">Summerpalace</a></li>
+                    <li><a href="203Greatwall.htm" style="color: black;">The Great Wall of China</a></li>
+                    <li><a href="204tiantan.htm" style="color: black;">Temple of Heaven</a></li>
+                    <li><a href="205yuanmingyuan.htm" style="color: black;">The Old Summer Palace</a></li>
+                </ul>
+            </li>
+            <li><a href="3beijingfood.htm">Food</a></li>
+            <li><a href="4beijingcurrentevents.htm">Discover</a></li>
+            <li><a href="5contactform.htm">Contact Us</a></li>
+        </ul>
+    </div>
+
 </header>
 
 <div class="content">
-
-
+    <div style="text-align: center">
+        <h1>BEIJING</h1>
+        <h3>A Historical City</h3>
+    </div>
     <section id="section-culture">
         <video width="640" height="400" controls>
             <source src="media/culture.mp4" type="video/mp4">
@@ -38,7 +49,7 @@
 
     <h2>Beijing's Courtyard(Si He Yuan) Culture</h2>
 
-    <img src="image/courtyard.jpeg">
+    <img src="image/courtyard.jpeg" id="courtyard">
     <p>As early as 3,000 years of the Western Zhou Dynasty, there was a complete courtyard. The Siheyuan is a closed independent courtyard built symmetrically with the north-south vertical axis.
         Although
         its appearance is blue and gray, its appearance is not dramatic, but it opens the door of deep red and tight, and it has a rich cultural charm. There is a saying in the Qing Dynasty that
@@ -53,6 +64,7 @@
     <p>With the changes in family structure and urban society, the traditional quadrangle is now very rare. Now open for ticket sales are Gongwangfu, Song Qingling's former residence, Guo Moruo's
         former
         residence, Meilanfang's former residence, these neighbors; and Lu Xun's former residence, Mao Dun's former residence can be visited.</p>
+    <div class="clear"></div>
     <h2>Peking Opera</h2>
     <img src="image/jingju.jpg" alt="Peking Opera">
     <p>Peking opera, or Beijing opera is a form of Chinese opera which combines music, vocal performance, mime, dance and acrobatics. It arose in the late 18th century and became fully developed and
@@ -64,6 +76,7 @@
         costumes, performers are the only focal points on Peking opera's characteristically sparse stage. They use the skills of speech, song, dance and combat in movements that are symbolic and
         suggestive, rather than realistic. Above all else, the skill of performers is evaluated according to the beauty of their movements. Performers also adhere to a variety of stylistic conventions
         that help audiences navigate the plot of the production.</p>
+    <div class="clear"></div>
     <h2>Beijing Temple Fair</h2>
     <img src="image/miaohui.jpeg" alt="Temple Fair">
     <p>The origin of the temple fair is inseparable from the development of Buddhism and Taoism. In order to have more believers, there is fierce competition between them. As a result, a wide variety
@@ -72,6 +85,7 @@
     <p>Over time, people go to the temple Fair to participate in religious activities become secondary but go for new year celebration. Nowadays, there are all kinds of snacks and fun activities at
         the
         temple fair. Even if the annual temple fairs are full of people, Beijing people still go for the meaning of starting the new year with fun.</p>
+    <div class="clear"></div>
     <hr>
     <div class="footer">
 
@@ -91,7 +105,54 @@
     </div>
 
 </div>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+<script>
+    function hoverOnHeader() {
+        console.log("On");
+        let a = $("#header a");
+        // let a = document.getElementById("header").getElementsByTagName("a");
+        for(let i=0,j=a.length;i<j;i++){
+            a[i].style.setProperty("color", "black");
+        }
+    }
 
+    function hoverOutHeader() {
+        console.log("Out");
+        let a = $("#header a");
+        // let a = document.getElementById("header").getElementsByTagName("a");
+        for(let i=0,j=a.length;i<j;i++){
+            a[i].style.setProperty("color", "white");
+        }
+    }
+
+    function hoverOnAttractionsMenu() {
+        let attractionsMenu = $("#attractions");
+        // let attractionsMenu = document.getElementById("attractions");
+        attractionsMenu.css("display", "flex");
+    }
+
+    function hoverOutAttractionsMenu() {
+        let attractionsMenu = $("#attractions");
+        // let attractionsMenu = document.getElementById("attractions");
+        attractionsMenu.css("display", "none");
+    }
+
+    function onCourtyardOut() {
+      console.log('here');
+      $("#courtyard").attr("src","image/courtyard.jpeg");
+    }
+
+
+
+    function onCourtyardOver() {
+      console.log('here');
+      $("#courtyard").attr("src","image/siheyuan2.jpg");
+    }
+
+    $("#courtyard").on("mouseover", onCourtyardOver);
+    $("#courtyard").on("mouseout", onCourtyardOut);
+
+</script>
 </body>
 
 </html>

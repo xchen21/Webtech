@@ -9,54 +9,189 @@
     <style>
         body {
             background: #f0fcff;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        .content img {
+            float: left;
+            height: 340px;
+            width: 600px;
+            margin-right: 20px;
+        }
+
+        ul, li, div, span {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        span {
+            display: block;
+            border-bottom: 1px solid black;
+            background-color: lightsteelblue;
+
+        }
+
+        .wrap {
+            width: 100%;
+            height: 500px;
+            border: 1px solid black;
+        }
+
+        .wrap li {
+            width: 100%;
+            height: 40px;
+            overflow: hidden;
+
+        }
+
+        ul li.checked {
+            height: 340px;
+        }
+
+        .wrap li span {
+            height: 39px;
+            line-height: 39px;
+            text-indent: 20px;
+        }
+
+        .wrap li div {
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 50px;
         }
     </style>
 
 </head>
 
 <body>
-<header id="header">
-    <ul>
-        <li><a href="1beijingculture.htm">Culture</a></li>
-        <li><a href="2beijingtouristattraction.htm">Attractions</a></li>
-        <li class="active"><a href="3beijingfood.htm">Food</a></li>
-        <li><a href="4beijingcurrentevents.htm">Discover</a></li>
-        <li><a href="5contactform.htm">Contact Us</a></li>
-    </ul>
+<header id="header" style="background-image: url('image/banner/banner4.jpg');">
+    <div onmouseover="hoverOnHeader(this)" onmouseout="hoverOutHeader(this)">
+        <a href="index.htm" class="logo-container">
+            <img src="image/logo.jpg">
+        </a>
+        <ul>
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="1beijingculture.htm">Culture</a></li>
+            <li onmouseover="hoverOnAttractionsMenu()" onmouseout="hoverOutAttractionsMenu()">
+                <a href="2beijingtouristattraction.htm" id="attractionsMenu">Attractions</a>
+                <ul id="attractions" style="display: none;flex-direction: column;background-color: white;">
+                    <li><a href="201Forbiddencity.htm" style="color: black;">Forbiddencity</a></li>
+                    <li><a href="202Summerpalace.htm" style="color: black;">Summerpalace</a></li>
+                    <li><a href="203Greatwall.htm" style="color: black;">The Great Wall of China</a></li>
+                    <li><a href="204tiantan.htm" style="color: black;">Temple of Heaven</a></li>
+                    <li><a href="205yuanmingyuan.htm" style="color: black;">The Old Summer Palace</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="3beijingfood.htm">Food</a></li>
+            <li><a href="4beijingcurrentevents.htm">Discover</a></li>
+            <li><a href="5contactform.htm">Contact Us</a></li>
+        </ul>
+    </div>
+
 </header>
+
+<!--content-->
 <div class="content">
-    <h1>Beijing Top 10 Special Cuisine</h1>
-    <h2>No.1 Beijing Roast Duck</h2>
-    <img src="image/kaoya.jpeg" alt="Beijing Roast Duck">
-    <p>According to a Chinese saying, no visit to this city is complete if you miss seeing the Great Wall or dining on Beijing Roast Duck (Beijing Kaoya). As a famous and delicious food with very long
-        history, Beijing Roast Duck is an excellent choice if you want to understand more about Chinese cuisine, culture and customs.</p>
-    <h3>History of Beijing Duck</h3>
-    <p>It is thought that the dish, like the tradition of roast turkey in America, owes its origin to the roast goose that is still popular in Europe on festive occasions. Westerners like Marco Polo
-        brought certain European customs to China and may have introduced the concept of roasting poultry to their Chinese hosts during the Yuan Dynasty (1271 - 1368). Ducks had long been domesticated
-        in China and the plump ducks proved to be an excellent substitute for goose in much the same way as the American colonizers found the native turkey to be. </p>
-    <p>The ducks were originally roasted in a conventional convection oven until Qing Dynasty (1644 - 1911) when this dish became a delicacy in the imperial menu and were highly regarded by emperors
-        and other members of the ruling classes. The ducks used during this period were a special breed namely the White Beijing Duck and a new method of cooking was employed, by suspending the ducks
-        over the flame in an open oven. </p>
-    <h2>No.2 Fried Been Paste Sauce Noodle</h2>
-    <img src="image/zhajiangmian.jpg" alt="Fried Bean Paste Sauce Noodle">
-    <p>The fried bean paste sauce noodle is the special dish of old Beijing. It is a dish consisting of thick wheat noodles topped with fried sauce. The fried sauce is normally made by simmering
-        stir-fried ground pork or beef with salty fermented soybean paste. </p>
-    <h2>No.3 Beijing Yogurt</h2>
-    <img src="image/suannai.jpeg" alt="Beijing Yogurt">
-    <h2>No.4 Fried Liver</h2>
-    <img src="image/chaogan.jpeg" alt="Fried Liver">
-    <h2>No.5 Stir Fried Tripe</h2>
-    <img src="image/baodu.jpeg" alt="Stir Fried Tripe">
-    <h2>No.6 Soy Juice and Fried Dough</h2>
-    <img src="image/douzhijiaoquan.jpeg" alt="Soy Juice and Fried Dough">
-    <h2>No.7 Wheaten Cake in Meat Broth</h2>
-    <img src="image/luzhu.jpeg" alt="Wheaten Cake in Meat Broth">
-    <h2>No.8 Pea Cake</h2>
-    <img src="image/wandouhuang.jpeg" alt="Pea Cake">
-    <h2>No.9 Sticky Rice Rolled with Sweet Bean Flour</h2>
-    <img src="image/lvdagun.jpeg" alt="Stick Rice Rolled with Sweet Bean Flour">
-    <h2>No.10 Sugar-Coated Haw in a Stick</h2>
-    <img src="image/bingtanghulu.jpeg" alt="Sugar-Coated Haw in a stick">
+    <div style="width: 30%; float: left">
+
+        <ul class="wrap">
+            <li class="checked">
+                <span>No.1 Beijing Roast Duck</span>
+                <div>
+
+                </div>
+            </li>
+            <li>
+                <span>No.2 ZhaJiangMian</span>
+                <div>2</div>
+            </li>
+            <li>
+                <span>No.3 Beijing Yogurt</span>
+                <div>3</div>
+            </li>
+            <li>
+                <span>No.4 Chaogan</span>
+                <div>4</div>
+            </li>
+            <li>
+                <span>No.5 Baodu</span>
+                <div>5</div>
+            </li>
+        </ul>
+
+    </div>
+    <div style="width: 66%; margin-left: 4%; float: left; ">
+
+        <div id="container1">
+
+            <h1>Beijing Top 10 Special Cuisine</h1>
+            <h2 id="NO1">No.1 Beijing Roast Duck</h2>
+            <img src="image/kaoya.jpeg" alt="Beijing Roast Duck">
+            <p>According to a Chinese saying, no visit to this city is complete if you miss seeing the Great Wall or dining on Beijing Roast Duck (Beijing Kaoya). As a famous and delicious food with
+                very
+                long
+                history, Beijing Roast Duck is an excellent choice if you want to understand more about Chinese cuisine, culture and customs.</p>
+            <h3>History of Beijing Duck</h3>
+            <p>It is thought that the dish, like the tradition of roast turkey in America, owes its origin to the roast goose that is still popular in Europe on festive occasions. Westerners like
+                Marco
+                Polo
+                brought certain European customs to China and may have introduced the concept of roasting poultry to their Chinese hosts during the Yuan Dynasty (1271 - 1368). Ducks had long been
+                domesticated
+                in China and the plump ducks proved to be an excellent substitute for goose in much the same way as the American colonizers found the native turkey to be. </p>
+            <p>The ducks were originally roasted in a conventional convection oven until Qing Dynasty (1644 - 1911) when this dish became a delicacy in the imperial menu and were highly regarded by
+                emperors
+                and other members of the ruling classes. The ducks used during this period were a special breed namely the White Beijing Duck and a new method of cooking was employed, by suspending
+                the
+                ducks
+                over the flame in an open oven. </p>
+        </div>
+
+        <div class="clear"></div>
+
+
+        <div id="container2">
+
+            <h2 id="NO2">No.2 Fried Been Paste Sauce Noodle</h2>
+            <img src="image/zhajiangmian.jpg" alt="Fried Bean Paste Sauce Noodle">
+            <p>Zhajiangmian or "noodles with soybean paste", is a Chinese dish consisting of thick wheat noodles topped with zhajiang sauce. Zhajiang sauce is normally made by simmering stir fried ground pork or beef with salty fermented soybean paste. Zhajiang also means "fried sauce" in Chinese. Although the sauce itself is made by stir frying, this homonym does not carry over into the Classical Chinese term.</p>
+            <p>The topping of the noodles usually are sliced fresh or/and pickled vegetables, including cucumber, radish, edamame, depending on regions. Chopped omelette or in lieu of extra firm tofu can also be alongside. Low-fat dieters often use ground, skinless chicken for the meat portion since ground turkey is not very popular in Asia. </p>
+            
+            <div class="clear"></div>
+        </div>
+        <div id="container3">
+            <h2 id="NO3">No.3 Beijing Yogurt</h2>
+            <img src="image/suannai.jpeg" alt="Beijing Yogurt">
+            <p>As one of the true memories of the old Beijing people, the old Beijing yoghurt has a profound historical origin. As early as the early Qing Dynasty, the Manchu and Mongolian nobles brought dairy products into Beijing, and the court banquet giving to the emperor includes a "yoghurt". </p>
+            <p>If you come to Beijing, you have to try the old Beijing yogurt. The yogurt is the memory of the many generations of Beijinger. Unlike many yogurt in the U.S, the old Beijing yogurt is more sour. The taste of milk is very obvious.  </p>
+            <p>Because it is so popular, in Beijing, whether it is the convenient store of Hutongkou, or the tourist attractions old Beijing yogurt can be seen everywhere. It is a small white porcelain bottle, covered with a blue and white paper and a short straw. Interesting fact is the bottle needs to be recycled so you have to finish the yogurt in front of the store.  </p>
+            <div class="clear"></div>
+        </div>
+        <div id="container4">
+
+            <h2 id="NO4">No.4 Fried Liver</h2>
+            <img src="image/chaogan.jpeg" alt="Fried Liver">
+            <p>Chaogan is a Chinese cuisine which is especially famous in Beijing.</p>
+            <p>The chaogan is made from pork liver, pork intestine and starch, seasoning with garlic, vinegar and soy sauce. Chaogan is traditionally served with buns.</p>
+            <p>It is widely believed that chaogan is invented by Huixianju restaurant (会仙居) in Beijing in Qing Dynasty. Although in the name there is the Chinese character "炒" （chao, literally "fry"）, the dish is not cooked by frying, but boiling, and the name is believed to be derived from the Manchus word "colambi", which means "to cook". </p>
+            <div class="clear"></div>
+        </div>
+        <div id="container5">
+
+            <h2 id="NO5">No.5 Stir Fried Tripe</h2>
+            <img src="image/baodu.jpeg" alt="Stir Fried Tripe">
+            <p>It was first recorded in the Qing dynasty. There are many restaurants and street pedlars selling it in Beijing, such as Baodu Feng, a traditional and well-known restaurant established in 1881. It is a halal tripe dish that is part of Beijing cuisine. It is traditionally prepared by the Muslim Hui people </p>
+           
+         
+            <div class="clear"></div>
+        </div>
+
+
+    </div>
     <hr>
     <div class="footer">
 
@@ -72,8 +207,67 @@
         <a href="4beijingcurrentevents.htm">Current Events</a>
         <a href="5contactform.htm">Contact Us</a>
     </div>
-
 </div>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+<script>
+  function hoverOnHeader() {
+    console.log("On");
+    let a = $("#header a");
+    // let a = document.getElementById("header").getElementsByTagName("a");
+    for (let i = 0, j = a.length; i < j; i++) {
+      a[i].style.setProperty("color", "black");
+    }
+  }
+
+  function hoverOutHeader() {
+    console.log("Out");
+    let a = $("#header a");
+    // let a = document.getElementById("header").getElementsByTagName("a");
+    for (let i = 0, j = a.length; i < j; i++) {
+      a[i].style.setProperty("color", "white");
+    }
+  }
+
+  function hoverOnAttractionsMenu() {
+    let attractionsMenu = $("#attractions");
+    // let attractionsMenu = document.getElementById("attractions");
+    attractionsMenu.css("display", "flex");
+  }
+
+  function hoverOutAttractionsMenu() {
+    let attractionsMenu = $("#attractions");
+    // let attractionsMenu = document.getElementById("attractions");
+    attractionsMenu.css("display", "none");
+  }
+
+  $(function () {
+
+    $('#container2').hide();
+    $('#container3').hide();
+    $('#container4').hide();
+    $('#container5').hide();
+
+    $("ul li span").mouseover(function () {
+      console.log($(this));
+      var text = $(this).context.innerText;
+      if (text) {
+        var no = text.charAt(3);
+        console.log(no);
+        $('#container1').hide();
+        $('#container2').hide();
+        $('#container3').hide();
+        $('#container4').hide();
+        $('#container5').hide();
+        $('#container' + no).show();
+
+      }
+
+      $(this).parent().animate({height: 340}, 500);
+      $(this).parent().siblings().animate({height: 40}, 500);
+    })
+  });
+</script>
 </body>
 
 </html>

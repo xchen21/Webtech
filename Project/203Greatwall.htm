@@ -9,27 +9,45 @@
     <style>
         body {
             background: #f2ecde;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
     </style>
 
 </head>
 
 <body>
-<header id="header">
-    <ul>
-        <li><a href="1beijingculture.htm">Culture</a></li>
-        <li class="active"><a href="2beijingtouristattraction.htm">Attractions</a></li>
-        <li><a href="3beijingfood.htm">Food</a></li>
-        <li><a href="4beijingcurrentevents.htm">Discover</a></li>
-        <li><a href="5contactform.htm">Contact Us</a></li>
-    </ul>
+<header id="header" style="background-image: url('image/banner/banner9.jpg');">
+    <div onmouseover="hoverOnHeader(this)" onmouseout="hoverOutHeader(this)">
+        <a href="index.htm"  class="logo-container">
+            <img src="image/logo.jpg">
+        </a>
+        <ul >
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="1beijingculture.htm">Culture</a></li>
+            <li class="active" onmouseover="hoverOnAttractionsMenu()" onmouseout="hoverOutAttractionsMenu()">
+                <a href="2beijingtouristattraction.htm" id="attractionsMenu">Attractions</a>
+                <ul id="attractions" style="display: none;flex-direction: column;background-color: white;">
+                    <li><a href="201Forbiddencity.htm" style="color: black;">Forbiddencity</a></li>
+                    <li><a href="202Summerpalace.htm" style="color: black;">Summerpalace</a></li>
+                    <li><a href="203Greatwall.htm" style="color: black;">The Great Wall of China</a></li>
+                    <li><a href="204tiantan.htm" style="color: black;">Temple of Heaven</a></li>
+                    <li><a href="205yuanmingyuan.htm" style="color: black;">The Old Summer Palace</a></li>
+                </ul>
+            </li>
+            <li><a href="3beijingfood.htm">Food</a></li>
+            <li><a href="4beijingcurrentevents.htm">Discover</a></li>
+            <li><a href="5contactform.htm">Contact Us</a></li>
+        </ul>
+    </div>
+
 </header>
 <div class="content">
-
-                <img src="image/gw4.jpeg" alt="The Great Wall">
-                <hr>
+    <div style="text-align: center;margin-bottom: 30px;">
+        <h1>The Great Wall of China</h1>
+        <img src="image/gw4.jpeg" alt="The Great Wall">
+    </div>
+    <hr>
     <div class="footer">
-
         <a href="index.htm">Home</a>
         <a href="1beijingculture.htm">Culture and History</a>
         <a href="2beijingtouristattraction.htm">Points of Interest</a>
@@ -44,7 +62,38 @@
     </div>
 
 </div>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+<script>
+    function hoverOnHeader() {
+        console.log("On");
+        let a = $("#header a");
+        // let a = document.getElementById("header").getElementsByTagName("a");
+        for(let i=0,j=a.length;i<j;i++){
+            a[i].style.setProperty("color", "black");
+        }
+    }
 
+    function hoverOutHeader() {
+        console.log("Out");
+        let a = $("#header a");
+        // let a = document.getElementById("header").getElementsByTagName("a");
+        for(let i=0,j=a.length;i<j;i++){
+            a[i].style.setProperty("color", "white");
+        }
+    }
+
+    function hoverOnAttractionsMenu() {
+        let attractionsMenu = $("#attractions");
+        // let attractionsMenu = document.getElementById("attractions");
+        attractionsMenu.css("display", "flex");
+    }
+
+    function hoverOutAttractionsMenu() {
+        let attractionsMenu = $("#attractions");
+        // let attractionsMenu = document.getElementById("attractions");
+        attractionsMenu.css("display", "none");
+    }
+</script>
 </body>
 
 </html>
